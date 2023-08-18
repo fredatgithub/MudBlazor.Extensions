@@ -2,9 +2,7 @@
 // MudBlazor licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using Microsoft.Extensions.DependencyInjection;
 using MudBlazor.Extensions.Explorer.Services;
-using MudBlazor.Services;
 
 namespace MudBlazor.Extensions.Explorer
 {
