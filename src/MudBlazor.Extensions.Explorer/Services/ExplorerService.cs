@@ -14,10 +14,10 @@ namespace MudBlazor.Extensions.Explorer.Services
         public static ExplorerService Init()
         {
             _extensions = GetExtensionTypes()
-                .Select(t=> Activator.CreateInstance(t))
+                .Select(t => Activator.CreateInstance(t))
                 .OfType<MudExtension>()
-                .Where(x=>!string.IsNullOrWhiteSpace(x.Id))
-                .DistinctBy(x=>x.Id)
+                .Where(x => !string.IsNullOrWhiteSpace(x.Id))
+                .DistinctBy(x => x.Id)
                 .ToArray();
             _idLookup = _extensions.ToDictionary(x => x.Id);
             return new ExplorerService();

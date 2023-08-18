@@ -3,11 +3,10 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using MudBlazor.Extensions.Explorer.Services;
-using Shouldly;
 using System.Threading.Tasks;
-using System.Diagnostics;
+using MudBlazor.Extensions.Explorer.Services;
 using NUnit.Framework;
+using Shouldly;
 
 namespace MudBlazor.Extensions.Tests
 {
@@ -18,7 +17,7 @@ namespace MudBlazor.Extensions.Tests
         public async Task TestGetLatestVersion()
         {
             var service = new NugetService();
-            var version=await service.GetLatestVersion("https://www.nuget.org/packages/MudBlazor/");
+            var version = await NugetService.GetLatestVersion("https://www.nuget.org/packages/MudBlazor/");
             Console.WriteLine("Version: " + version);
             version.ShouldMatch(@"(\d+\.)+", version);
         }

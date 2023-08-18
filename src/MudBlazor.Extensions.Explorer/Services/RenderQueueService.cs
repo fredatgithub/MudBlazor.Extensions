@@ -2,11 +2,6 @@
 // MudBlazor licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MudBlazor.Extensions.Explorer.Helpers;
 
 namespace MudBlazor.Extensions.Explorer.Services
@@ -79,9 +74,15 @@ namespace MudBlazor.Extensions.Explorer.Services
             lock (_queue)
             {
                 if (_queue.Count == 0)
+                {
                     return Task.CompletedTask;
+                }
+
                 if (_tcs == null)
+                {
                     _tcs = new TaskCompletionSource();
+                }
+
                 return _tcs.Task;
             }
         }
